@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=1, initial-scale=1.0">
-    <title> <%= subtheme %></title>
+    <title> <%= name  %></title>
+    <link rel="stylesheet" href="/app.css">
 </head>
 <body style="text-align: center;">
-    <h1>Browsing the <span style="color: green;"><%= subtheme %></span> path!</h1>
+    <h1>Browsing the <span style="color: green;"><%= name %></span> path!</h1>
+    <p><%= description %> - Subscribers: <%= subscribers %></p>
+    
+
+    <% for (let post of posts) { %>
+        <article>
+            <h4><%= post.title %> - <%= post.author %></h4>
+            <% if (post.img) { %>
+            <img src="<%= post.img %>">
+            <% } %>
+        </article> 
+    <% } %> 
     
 </body>
 </html>
