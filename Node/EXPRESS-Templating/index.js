@@ -16,6 +16,11 @@ app.get("/", (req, res) => {
     console.log("-> Home path".green);
 })
 
+app.get("/r/:subtheme", (req, res) => {
+    const { subtheme } = req.params;
+    res.render("subtheme.ejs", { subtheme });
+})
+
 app.get("/rand", (req, res) => {
     const num =  Math.floor(Math.random() * 10) + 1;
     res.render("random.ejs", {rand: num});
